@@ -1,66 +1,74 @@
-# INF138 Project Template
+# CinemApp
 
-Ένα απλό πρότυπο οργάνωσης του κώδικα και της τεχνικής τεκμηρίωσης για τις εξαμηνιαίες εργασίες του μαθήματος Τεχνολογία Λογισμικού ([INF138](https://eclass.aueb.gr/courses/INF138/)) του Τμήματος Πληροφορικής Οικονομικού Πανεπιστημίου Αθηνών.
-
-Η τρέχουσα έκδοση περιλαμβάνει την [προδιαγραφή των απαιτήσεων λογισμικού](docs/markdown/software-requirements.md) με προσαρμογή του `IEEE Std 830-1998` για την ενσωμάτωση απαιτήσεων σε μορφή περιπτώσεων χρήσης. Για περισσότερες λεπτομέρειες μπορείτε να ανατρέξετε στο βιβλίο [Μ Γιακουμάκης, Ν. Διαμαντίδης, Τεχνολογία Λογισμικού, Σταμούλης, 2009](https://www.softeng.gr).
-
-# Οδηγίες χρήσης
-
-Στην παρούσα αρχική σελίδα `README.md` προσθέστε σε μορφή Markdown την περιγραφή του Project όπως σας ζητείται στο παραδοτέο R1. Στη σελίδα αυτή θα προστεθούν σύνδεσμοι προς τα έγγραφα Markdown που περιλαμβάνουν την προδιαγραφή και ανάλυση των απαιτήσεων [software-requirements.md](docs/markdown/software-requirements.md) και τη σχεδίαση του συστήματος [design.md](docs/markdown/design.md).
-
-Η τεκμηρίωση/διαγράμματα που ζητούνται στα επόμενα παραδοτέα θα τοποθετηθούν στους εξής φακέλους:
-* `docs/markdown`: αρχεία Markdown με την τεκμηρίωση του συστήματος που απαιτείται για τα παραδοτέα R2-R4. H τεκμηρίωση θα συμπεριληφθεί στα ακόλουθα αρχεία:
-     *  `software-requirements.md`: προδιαγραφή και ανάλυση των απαιτήσεων. Προκειμένου να διευκολυνθεί η συνεργασία σας, οι περιγραφές των περιπτώσεων χρήσης μπορούν να εισαχθούν σε διαφορετικά αρχεία `*.md`. Προϋπόθεση είναι να υπάρχουν κατάλληλοι σύνδεσμοι από το `software-requirements.md` προς αυτά έτσι ώστε να διευκολύνεται η πλοήγηση στην τεκμηρίωση μέσω του Gitlab. Τα διαγράμματα που θα δημιουργηθούν στα πλαίσια του R2 θα ενσωματωθούν στα παραπάνω έγγραφα (δεν θα λάβουμε υπόψιν διαγράμματα με μορφή εικόνας/uxf που δεν θα φαίνονται ως μέρος της τεκμηρίωσης).
-     *  `design.md`: περιγραφή της σχεδίασης του συστήματος όπως ζητείται στα παραδοτέα R3 και R4. To έγγραφο θα ενσωματώνει όλα τα διαγράμματα που θα δημιουργηθούν στα παραδοτέα R3, R4. Οι εικόνες των διαγραμμάτων θα είναι διαθέσιμες στο φάκελο `docs/markdown/uml`, όπως παράγονται από το εργαλείο Gradle.
-* `docs/uml`: αρχεία Umlet (`*.uxf`) με τα διαγράμματα που έχουν υλοποιηθεί στα πλαίσια των παραδοτέων R2-R4. Μπορούν να οργανωθούν σε υποφακέλους (πχ. `requirements`, `design`).
-
-Η αυτοματοποιημένη μετατροπή των διαγραμμάτων Umlet σε PNG εικόνες, έτοιμες προς ενσωμάτωση στην Markdown τεκμηρίωσή σας μπορεί να γίνει με χρήση του εργαλείου Gradle. Προϋπόθεση για τη σωστή λειτουργία της διαδικασίας είναι η [λήψη](https://maven.apache.org/download.cgi), [εγκατάσταση](https://maven.apache.org/install.html) και προσθήκη στο PATH του συστήματος του εργαλείου Maven.
-
-Μετά την εγκατάσταση του Maven, μπορείτε να παράξετε όλα τα διαγράμματα που βρίσκονται στον κατάλογο `docs\uml` (και υποκαταλόγους) με τη βοήθεια του Gradle (δε χρειάζεται εγκατάσταση):
-
-Από γραμμή εντολών Windows:
-```bash
-gradlew.bat umlet
-```
-
-Από γραμμή εντολών Linux:
-```bash
-./gradlew umlet
-```
-
-Η εκτέλεση της εντολής θα εγκαταστήσει το Gradle και θα παράξει τα διαγράμματα στον κατάλογο `docs\markdown\uml` διατηρώντας την οργάνωση σε καταλόγους των Umlet αρχείων. Στη συνέχεια, μπορείτε να ενσωματώσετε στην τεκμηρίωσή σας τις εικόνες του παραπάνω καταλόγου.
-
-# Περιγραφή Project
-
-Εξουσιοδοτημένο προσωπικό: Μερικοί υπάλληλοι με αυτόν τον τίτλο μέσω της εφαρμογής θα μπορούν να βγάζουν το πρόγραμμα για τις προβολές των ταινιών στον κινηματογράφο και να απαντάνε σε ερωτήσεις/feedback πελατών. Κυλικείο:θα υπάρχει ένας χρήστης που θα «επιβλέπει» το κυλικείο ο οποίος θα φτιάχνει το μενού του κυλικείου(από το οποίο ο πελάτης θα μπορεί να παραγγείλει από την εφαρμογή) Απλός χρήστης:Ο «απλός» πελάτης θα μπορεί να κάνει αναζήτηση ταινιών, να κάνει κρατήσεις, να βαθμολογεί τις ταινίες, ερωτήσεις
-
-και να δίνει feedback γενικά για τον κινηματογράφο(πχ δεν έμεινε ευχαριστημένος από το menu κυλικείου) καθώς επισής μπορεί να πραγματοποιήσει pre order για μελλοντικές ταινίες, να βαθμολογήσει τον κινηματογράφο, και να παραγγέλνει από το menu. "premium" user: ο premium user θα μπορεί να κάνει ότι και ο απλός χρήστης απλά θα έχει μερικά παραπάνω προνόμια όπως: προτεραιότητα στα εισιτήρια , δυνατότητα για καλύτερες θέσεις και ανεξάρτητο χώρο από την βαθμολογία ταινιών του απλού χρήστη που θα μπορεί να βαθμολογεί ταινίες και να γράφει κριτικές.
+CinemApp is an Android application created by:
+- Stelios Pantelopoulos
+- Themis Apostolopoulos
+- Iasonas Ziogas
+- Thanasis Klettas
 
 
-Προσθέστε τα εξής:
+## A look at the app
 
-----------------------------
-
-- ο ιδιοκτήτης του κινηματογράφου θα δημιουργεί προσωπικό προφίλ και θα διαχειρίζεται τα στοιχεία του κινηματογράφου (διεύθυνση τηλέφωνο) καθώς και τις διαθέσιμες αίθουσες προβολών,
-
-- οι αίθουσες έχουν συγκεκριμένη χωρητικότητα και αριθμημένες θέσεις χωρισμένες σε ζώνες (μπροστά, μέση, πίσω),
-
-- θα υποστηρίζονται πολλές ταυτόχρονες προβολές σε διαφορετικές αίθουσες (ανάλογα με τις αίθουσες που διαθέτει ο κινηματογράφος),
-
-- ο ιδιοκτήτης θα  εξουσιοδοτεί εγγεγραμμένους χρήστες (υπάλληλοι κινηματογράφου) να κάνουν προγραμματισμό των προβολών ταινιών στις διάφορες αίθουσες,
-
-- οι πελάτες της υπηρεσίας θα μπορούν να κάνουν αναζήτηση ταινίας με βάση την ώρα προβολής, την τοποθεσία και τη διαθεσιμότητα θέσεων σε συγκεκριμένη ζώνη της αίθουσας. Το σύστημα θα εμφανίζει διαθέσιμες προβολές από διάφορους κινηματογράφους,
-
-- οι πελάτες θα έχουν τη δυνατότητα κράτησης εισιτηρίου για κάποιο επιλεγμένο αποτέλεσμα αναζήτησης,
-
-- ο ιδιοκτήτης του κινηματογράφου θα μπορεί να βλέπει μηνιαία στατιστικά εισιτηρίων ανά ταινιά 
-
-# Απαιτήσεις Συστήματος
-Οι απαιτήσεις του συστήματος μας βρίσκονται [εδώ](docs/markdown/software-requirements.md)
-
-# Συμπληρωματικές προδιαγραφές για τις μη λειτουργικές απαιτήσεις
-Οι συμπληρωματικές προδιαγραφές για τις μη λειτουργικές απαιτήσεις του συστήματος βρίσκονται  [εδώ](docs/markdown/Non-functional_requirements.md)
+Some of the activities of the app are the following:  
 
 
+![Front page](/assetsREADME/frontPage.png)  
+The main activity of the app.
 
 
+![Rating page](/assetsREADME/ratingsPage.png)   
+Activity where the customer can rate a movie.
+
+
+![Add staff page](/assetsREADME/addStaff.png)  
+Activity where the owner creates account for a staff member.  
+
+
+## Project Description
+
+- **Staff**:
+     - Sign in.
+     - Manage the movie program.
+     - Answer the questions of the customers. 
+
+
+- **Customer**: 
+     - Sign up.
+     - Sign in.
+     - Search a movie.
+     - Make reservation.
+     - Make ratings.
+     - Read other ratings.
+
+     There are two types of customer:  
+     
+     1. Simple
+     2. Premium: Privilages in tickets reservation and in movies rating. 
+
+
+- **Owner**:
+     - Sign up.
+     - Sign in.
+     - Create account for staff.
+     - Manage Movies.
+     - Manage Movie Theaters.
+     - See statistics of tickets.
+
+- **Auditoriums**: have certain capacity.
+
+## Design details
+
+In order to create this application, at the start the requirements of the system (functional and non-functional) were defined, then the appropriate diagrams were created, which in the final phase were used to write the code, which was checked for its correctness by the tests in JUnit4.
+
+### Functional system requirements
+You can find functional system requirements in the following link: [click here](docs/markdown/software-requirements.md).
+
+### Non functional system requirements
+You can find non functional system requirements in the following link: [click here](docs/markdown/Non-functional_requirements.md).
+
+### Diagrams of the project
+
+You can find the class, activity, sequence diagrams as well as the coverage of tests in the following link: [click here](docs/markdown/design.md).
+
+
+Note: All the requirements of the system are witten in Greek because this app was part of a project in our university
